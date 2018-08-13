@@ -11,6 +11,51 @@ tags: [Linux]
 
 ---
 
+### 2018-8-13
+
+终于装好了双系统Ubuntu，从今天开始的笔记都在Ubuntu上用vim写吧～
+
+强行让自己习惯Linux的操作方式，不过Ubuntu的字体真的很好看啊。
+
+碰到不少的坑，明天再开一篇来写一下遇到的坑，以备以后重装系统的时候吧……虽然完全不想再重装啦
+
+#### 第二十二章 软件安装RPM SRPM, YUM
+
+CentOS的RPM和Debian的dpkg
+
+- dpkg
+
+最早是由Debian Linux社群开发的，通过dpkg就可以很简单地安装软件，同时可以提供安装后的软件信息。Ubuntu也是由Debian衍生出来的Linux distribution，所以也是支持dpkg的
+
+- RPM (Red Hat Package Manager)
+
+由 Red Hat 公司开发出来的，很多 distribution 都在使用的非常方便的软件管理方式。
+
+因为是已经编译好的软件，所以通常不同 distribution 释出的RPM不能安装在别的 distribution 上面
+
+因此就有了SRPM，SRPM是PRM的源码，自己提供了 configure 和 Makefile, 可以修改参数设定文件，编译出适合正在使用的 distribution 的RPM 文件
+
+SRPM用法：
+
+- 先将软件以RPM方式编译为RPM文件
+- 再将这个RPM安装进系统中
+
+SRPM文件后缀：xxx.src.rpm
+
+
+
+RPM文件名：
+
+例：`rp-pppoe-3.11-5.el7.x86_64.rpm`
+
+文件名不同项目以-来分隔。
+
+- 软件名称：rp-pppoe
+- 版本信息：3.11
+- 释出版本的次数：5，同一版本中因为bug或是安全问题进行小幅度patch或重设编译参数，之后重新打包成RPM文件
+- 操作硬件平台：`.el7.x86_64`,不同的平台设定参数也有所不同
+
+---
 ### 2018-8-8
 
 为什么使用make：
