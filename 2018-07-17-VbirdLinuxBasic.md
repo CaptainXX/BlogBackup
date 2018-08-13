@@ -55,6 +55,61 @@ RPM文件名：
 - 释出版本的次数：5，同一版本中因为bug或是安全问题进行小幅度patch或重设编译参数，之后重新打包成RPM文件
 - 操作硬件平台：`.el7.x86_64`,不同的平台设定参数也有所不同
 
+平台名称：
+
+i386	适用所有的x86平台
+i586	针对586等级的电脑进行最佳化编译
+i686	目前市场的大部分都是这个等级的CPU
+x86_64	针对64位的CPU最佳化编译
+noarch	没有任何硬件等级的限制，一般是shell脚本软件
+
+目前的软件大多是i686 x86_64 和 noarch版本，386可以在一些很特别的软件上面看到，硬件方面是向下兼容的。
+
+
+
+RPM管理软件：`rpm`
+
+只有使用root权限才能操作rpm指令(Ubuntu里对应的是dpkg)
+
+`rpm -ivh package_name.rpm`
+-i	install	安装
+-v	verbose	显示详细安装信息
+-h	显示安装进度
+
+`rpm -U|F -vh pakage_name.rpm`
+
+升级更新软件：
+
+-U	如果没有安装过后面的软件，则安装；如果有新版可用，则更新
+-F	只有已经安装了的软件才会更新，不会自动安装未安装的软件
+
+`rpm qa`查询已经安装的软件
+
+`rpm q[licdR] [name]`查询已安装的软件名称
+
+`rpm qf [filename]`
+
+`rpm -qp[licdR] [name]`
+-q	仅查询
+-qa	列出所有软件名称
+-qi	列出软件的详细信息
+-ql	列出该软件的所有文件与目录所在完整文件名
+-qc	列出该软件的所有设定文件
+-qd	列出该软件的所有说明文件
+-qR	列出与该软件有关的相依软件所含档案
+-q --scripts	列出是否含有安装后需要执行的脚本文件
+-p	packages 列出某个RPM文件
+
+
+
+rpm命令和dpkg命令的对应：
+
+`rpm -q logrotate`	=	`dpkg --list logrotating`
+`rpm -ql logrotate`	=	`dpkg --listfiles logrotate`
+
+
+
+
 ---
 ### 2018-8-8
 
