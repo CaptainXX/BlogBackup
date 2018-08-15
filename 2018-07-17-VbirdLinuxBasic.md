@@ -90,14 +90,23 @@ RPM管理软件：`rpm`
 `rpm qf [filename]`
 
 `rpm -qp[licdR] [name]`
+
 -q	仅查询
+
 -qa	列出所有软件名称
+
 -qi	列出软件的详细信息
+
 -ql	列出该软件的所有文件与目录所在完整文件名
+
 -qc	列出该软件的所有设定文件
+
 -qd	列出该软件的所有说明文件
+
 -qR	列出与该软件有关的相依软件所含档案
+
 -q --scripts	列出是否含有安装后需要执行的脚本文件
+
 -p	packages 列出某个RPM文件
 
 
@@ -105,10 +114,19 @@ RPM管理软件：`rpm`
 rpm命令和dpkg命令的对应：
 
 `rpm -q logrotate`	=	`dpkg --list logrotating`
+
 `rpm -ql logrotate`	=	`dpkg --listfiles logrotate`
 
 
 
+
+`rpm -V`验证数字签名
+
+`rpm -e`卸载
+
+
+
+`yum`线上升级
 
 ---
 ### 2018-8-8
