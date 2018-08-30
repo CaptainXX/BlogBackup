@@ -3,8 +3,8 @@
 int main()
 {
 	using namespace std;
-	//char sh = 88;
-	//cout << sh;
-	cout << char(88) << endl;
+	int * pt;
+	pt = new int;
+	cout << pt << endl << *pt << endl;
 	return 0;
 }
